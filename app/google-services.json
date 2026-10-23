@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "383623130309",
+    "project_id": "projetjobmatcher",
+    "storage_bucket": "projetjobmatcher.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383623130309:android:d7658e57e98d0edc5754ac",
+        "android_client_info": {
+          "package_name": "com.example.projetjobmatcher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqG3xC7OEFc2xSses9DQ_NUfGyhs0QPtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
