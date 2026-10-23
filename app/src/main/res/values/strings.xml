@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JobMatcher</string>
+    <string name="greeting">Salut Mohamed</string>
+    <string name="offers_title">Offres d\'emploi</string>
+    <string name="search_hint">Rechercher un emploi, entreprise…</string>
+    <string name="filter_location">Localisation</string>
+    <string name="filter_category">Catégorie</string>
+    <string name="btn_view_details">Voir détails</string>
+    <string name="btn_apply">Postuler maintenant</string>
+    <string name="btn_send_application">Envoyer ma candidature</string>
+    <string name="btn_import_cv">Importer CV</string>
+    <string name="back_to_offers">← Retour aux offres</string>
+    <string name="back_to_details">← Retour aux détails</string>
+    <string name="cv_label">CV (PDF uniquement)</string>
+    <string name="cv_import_hint">Appuyez pour importer votre CV</string>
+    <string name="cv_pdf_only">PDF uniquement</string>
+    <string name="pdf_only_error">Veuillez sélectionner un fichier PDF</string>
+    <string name="apply_title">Postuler</string>
+    <string name="description_label">Description</string>
+    <string name="posted_date_label">Publiée</string>
+    <string name="application_success">Candidature envoyée avec succès!</string>
+    <string name="no_results">Aucune offre trouvée</string>
+    <string name="all_locations">Toutes les villes</string>
+    <string name="all_categories">Toutes les catégories</string>
+    <string name="menu_import_cv">Importer CV</string>
+    <string name="saved_label">Sauvegardé</string>
+    <string name="compatibility_score">Score de compatibilité</string>
+</resources>

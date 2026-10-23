@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary background -->
+    <color name="bg_primary">#1e3a5f</color>
+    <!-- Card background -->
+    <color name="bg_card">#2d4a6f</color>
+    <!-- Card border / divider -->
+    <color name="bg_card_border">#3d5a7f</color>
+    <!-- Accent blue -->
+    <color name="accent_blue">#5b9fd8</color>
+    <!-- Accent blue hover -->
+    <color name="accent_blue_light">#7db5e8</color>
+    <!-- Text primary -->
+    <color name="text_primary">#FFFFFF</color>
+    <!-- Text secondary -->
+    <color name="text_secondary">#a8c5e0</color>
+    <!-- Text muted -->
+    <color name="text_muted">#8ba8c8</color>
+    <!-- Input background -->
+    <color name="input_bg">#2d4a6f</color>
+    <!-- Red for remove -->
+    <color name="color_error">#f87171</color>
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <!-- Status bar -->
+    <color name="status_bar">#162d4a</color>
+</resources>

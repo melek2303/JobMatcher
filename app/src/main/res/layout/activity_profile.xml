@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Écran Profil : partie haute bleue + partie basse blanche
+     Même structure que activity_main.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ══ PARTIE HAUTE BLEUE ══ -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingStart="28dp"
+        android:paddingBottom="32dp"
+        >
+
+        <!-- Cercle décoratif en haut à droite -->
+        <View
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-40dp"
+            android:layout_marginEnd="-40dp"
+            android:background="@drawable/shape_cercle_deco"
+            android:alpha="0.4" />
+
+        <!-- Contenu header -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Logo JOBMATCH -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="18dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/shape_logo"
+                    android:src="@drawable/baseline_search_24"
+                    android:padding="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JOBMATCH"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <!-- Titre Mon Profil -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mon Profil"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- Sous-titre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gérez vos informations personnelles"
+                android:textColor="@color/text_light_blue"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ══ PARTIE BASSE BLANCHE ══ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- ── Section 1 : Informations personnelles ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_card"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Label NOM -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="16dp"
+                        android:background="@color/blue_btn"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NOM COMPLET"
+                        android:textColor="@color/text_gray"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Champ nom : modifiable, pré-rempli depuis Firebase -->
+                <EditText
+                    android:id="@+id/editNomProfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_input"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="@color/text_dark"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="Votre nom"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Label EMAIL -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="16dp"
+                        android:background="@color/blue_btn"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EMAIL"
+                        android:textColor="@color/text_gray"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Email : lecture seule, non modifiable -->
+                <TextView
+                    android:id="@+id/textEmailProfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_input"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="@color/hint_color"
+                    android:gravity="center_vertical"
+                    android:text="email@exemple.com"/>
+
+            </LinearLayout>
+
+            <!-- Bouton Sauvegarder le nom -->
+            <LinearLayout
+                android:id="@+id/buttonSauvegarder"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/shape_button_blue"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sauvegarder le nom"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Bouton Changer mot de passe -->
+            <LinearLayout
+                android:id="@+id/buttonChangerMdp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/shape_button_outline"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Changer le mot de passe"
+                    android:textColor="@color/text_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- ── Section 2 : Mon CV ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_card"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Label MON CV -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="16dp"
+                        android:background="@color/blue_btn"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MON CV"
+                        android:textColor="@color/text_gray"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Nom du CV actuel (chargé depuis Firebase) -->
+                <TextView
+                    android:id="@+id/textNomCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aucun CV enregistré"
+                    android:textColor="@color/hint_color"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Barre de progression : visible seulement pendant l'upload -->
+                <ProgressBar
+                    android:id="@+id/progressBarCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:indeterminate="true"/>
+
+                <!-- Bouton importer un nouveau CV PDF -->
+                <LinearLayout
+                    android:id="@+id/buttonImporterCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/shape_button_blue">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Importer / Modifier mon CV"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Bouton Retour -->
+            <LinearLayout
+                android:id="@+id/buttonRetourProfil"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/shape_button_outline"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retour"
+                    android:textColor="@color/text_dark"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <!-- ── Section 3 : Zone dangereuse ── -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_missing"
+                android:alpha="0.4"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zone dangereuse"
+                android:textColor="@color/color_missing"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La suppression effacera définitivement votre compte, votre CV et tous vos résultats."
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Bouton Supprimer le compte (rouge) -->
+            <LinearLayout
+                android:id="@+id/buttonSupprimer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/shape_badge_rouge"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supprimer mon compte"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
